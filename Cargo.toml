@@ -1,0 +1,26 @@
+[package]
+name = "trait-bounds"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { version = "2", features = ["full", "extra-traits"] }
+quote = "1"
+proc-macro2 = "1"
+
+[dev-dependencies]
+sqlx = { version = "0.7", features = ["chrono"] }
+chrono = "0.4"
+
+[[example]]
+name = "basic"
+crate-type = ["lib"]
+
+[[example]]
+name = "sqlx"
+crate-type = ["lib"]
